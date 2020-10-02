@@ -192,7 +192,7 @@ keys:
 
 ## Citation
 
-Please cite `gym-super-mario-bros` if you use it in your research.
+Please cite `gym-super-mario-bros` if you use it in your research work.
 
 ```tex
 @misc{gym-super-mario-bros,
