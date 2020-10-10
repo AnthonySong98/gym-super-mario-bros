@@ -17,7 +17,7 @@ for step in range(4000):
     if done:
         state = env.reset()
     state, reward, done, info = env.step(env.action_space.sample())
-    print(reward)
-    env.render()
+    print("Current Step Reward:",reward)
+    # env.render()
 
 env.close()
