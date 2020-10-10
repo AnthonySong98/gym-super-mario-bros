@@ -1,5 +1,8 @@
 # Ignores specific to different operating system files
 
+# vscode
+.vscode
+
 # MacOS
 # General
 *.pkg
