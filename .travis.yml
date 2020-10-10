@@ -5,9 +5,6 @@ matrix:
     - name: "Python 3.5 on Ubuntu 14.04"
       python: 3.5
       dist: trusty
-    - name: "Python 3.6 on Ubuntu 14.04"
-      python: 3.6
-      dist: trusty
     - name: "Python 3.5 on Ubuntu 16.04"
       python: 3.5
       dist: xenial

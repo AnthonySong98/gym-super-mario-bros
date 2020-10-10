@@ -18,10 +18,10 @@ def _register_mario_env(id, is_random=False, **kwargs):
     # if the is random flag is set
     if is_random:
         # set the entry point to the random level environment
-        entry_point = 'gym_super_mario_bros:SuperMarioBrosRandomStagesEnv'
+        entry_point = 'my_gym_super_mario_bros:SuperMarioBrosRandomStagesEnv'
     else:
         # set the entry point to the standard Super Mario Bros. environment
-        entry_point = 'gym_super_mario_bros:SuperMarioBrosEnv'
+        entry_point = 'my_gym_super_mario_bros:SuperMarioBrosEnv'
     # register the environment
     gym.envs.registration.register(
         id=id,
