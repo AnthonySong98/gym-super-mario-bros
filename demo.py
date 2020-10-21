@@ -13,10 +13,12 @@ env = JoypadSpace(env, SIMPLE_MOVEMENT)
 
 
 done = True
-for step in range(4000):
+for step in range(100):
     if done:
         state = env.reset()
-    state, reward, done, info = env.step(env.action_space.sample())
+    cur_act = env.action_space.sample()
+    state, reward, done, info = env.step(cur_act)
+    print("Current Step State:",state.shape)
     print("Current Step Reward:",reward)
     # env.render()
 
