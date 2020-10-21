@@ -3,6 +3,9 @@
 # vscode
 .vscode
 
+# results folder
+results/
+
 # MacOS
 # General
 *.pkg
