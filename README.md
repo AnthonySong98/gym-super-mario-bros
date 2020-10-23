@@ -19,6 +19,22 @@
 
 ![Mario](https://user-images.githubusercontent.com/2184469/40949613-7542733a-6834-11e8-895b-ce1cc3af9dbb.gif)
 
+## HOW TO RUN
+```
+git clone https://github.com/AnthonySong98/gym-super-mario-bros.git
+``` 
+```
+cd gym-super-mario-bros && git checkout --track origin/dev 
+``` 
+```
+pip install -r requirements.txt
+```
+```
+python train_demo.py
+```
+
+
+
 An [OpenAI Gym](https://github.com/openai/gym) environment for
 Super Mario Bros. & Super Mario Bros. 2 (Lost Levels) on The Nintendo
 Entertainment System (NES) using
