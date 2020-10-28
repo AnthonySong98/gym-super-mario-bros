@@ -19,7 +19,7 @@
 
 ![Mario](https://user-images.githubusercontent.com/2184469/40949613-7542733a-6834-11e8-895b-ce1cc3af9dbb.gif)
 
-## HOW TO RUN
+## HOW TO SET UP
 ```
 git clone https://github.com/AnthonySong98/gym-super-mario-bros.git
 ``` 
@@ -29,11 +29,23 @@ cd gym-super-mario-bros && git checkout --track origin/dev
 ```
 pip install -r requirements.txt
 ```
-```
-python train_demo.py
-```
+## HOW TO RUN
 
+### Training A Deep-Q Agent
+To train a Deep-Q agent to play a game:
+```
+python . -m train -e <environment ID>
+```
+- `<environment ID>` is the ID of the environment to train on.
 
+### Playing With A Trained Agent
+To run a trained Deep-Q agent on validation games:
+```
+python . -m play -o <results directory>
+```
+- `<results directory>` is a directory containing a `weights.h5` file from a training session
+
+***
 
 An [OpenAI Gym](https://github.com/openai/gym) environment for
 Super Mario Bros. & Super Mario Bros. 2 (Lost Levels) on The Nintendo
