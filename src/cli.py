@@ -33,6 +33,11 @@ _CMD_LINE_ARGS = {
         'default': int(2.5e4),
         'help': 'how to frames are played when training',
     },
+    ('--rounds', '-R'): {
+        'type': int,
+        'default': 100,
+        'help': 'how many rounds does agent play',
+    },
 }
 
 
@@ -70,6 +75,7 @@ def main() -> None:
         play(
             results_dir=args.output,
             monitor=args.monitor,
+            games=args.rounds
         )
 
 

@@ -36,7 +36,7 @@ def plot_results(env: gym.Env, results_dir: str, filename: str) -> None:
     plt.savefig('{}/{}.pdf'.format(results_dir, filename))
 
 
-def play(results_dir: str, monitor: bool=False) -> None:
+def play(results_dir: str, monitor: bool=False, games = 100) -> None:
     """
     Play an environment with a certain agent.
 
@@ -73,13 +73,13 @@ def play(results_dir: str, monitor: bool=False) -> None:
     agent.target_model.load_weights(weights_file)
 
     try:
-        agent.play()
+        agent.play(games=games)
     except KeyboardInterrupt:
         env.close()
         sys.exit(0)
 
     # plot the results and save data to disk
-    # plot_results(env, results_dir, 'result_play')
+    plot_results(env, results_dir, 'result_play')
 
     env.close()
 
@@ -116,7 +116,7 @@ def play_random(env_id: str, output_dir: str, monitor: bool=False) -> None:
     agent.play()
 
     # plot the results and save data to disk
-    # plot_results(env, output_dir, 'result_random')
+    plot_results(env, output_dir, 'result_random')
 
     env.close()
 
