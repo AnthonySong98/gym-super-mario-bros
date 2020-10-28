@@ -34,17 +34,18 @@ pip install -r requirements.txt
 ### Training A Deep-Q Agent
 To train a Deep-Q agent to play a game:
 ```
-python . -m train -e <environment ID>
+python . -m train -e <environment ID> -F <num of trained frames>
 ```
 - `<environment ID>` is the ID of the environment to train on.
+- `<num of trained frames>` is the number of trained frames
 
 ### Playing With A Trained Agent
 To run a trained Deep-Q agent on validation games:
 ```
-python . -m play -o <results directory> -F <num of trained frames>
+python . -m play -o <results directory> -R <num of rounds>
 ```
 - `<results directory>` is a directory containing a `weights.h5` file from a training session
-- `<num of trained frames>` is the number of trained frames
+- `<num of rounds>` is the number of rounds
 
 ***
 
