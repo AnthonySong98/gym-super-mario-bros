@@ -73,13 +73,14 @@ def play(results_dir: str, monitor: bool=False, games = 100) -> None:
     agent.target_model.load_weights(weights_file)
 
     try:
-        agent.play(games=games)
+        scores = agent.play(games=games)
     except KeyboardInterrupt:
         env.close()
         sys.exit(0)
 
     # plot the results and save data to disk
-    plot_results(env, results_dir, 'result_play')
+    # plot_results(env, results_dir, 'result_play')
+    print(scores)
 
     env.close()
 
