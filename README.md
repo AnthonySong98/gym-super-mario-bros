@@ -41,9 +41,10 @@ python . -m train -e <environment ID>
 ### Playing With A Trained Agent
 To run a trained Deep-Q agent on validation games:
 ```
-python . -m play -o <results directory>
+python . -m play -o <results directory> -F <num of trained frames>
 ```
 - `<results directory>` is a directory containing a `weights.h5` file from a training session
+- `<num of trained frames>` is the number of trained frames
 
 ***
 
