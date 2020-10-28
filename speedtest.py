@@ -1,4 +1,4 @@
-from gym_super_mario_bros import SuperMarioBrosEnv
+from my_gym_super_mario_bros import SuperMarioBrosEnv
 import tqdm
 env = SuperMarioBrosEnv()
 

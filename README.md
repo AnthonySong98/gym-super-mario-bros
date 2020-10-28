@@ -7,8 +7,8 @@
 [![Format][pypi-format]][pypi-home]
 [![License][pypi-license]](LICENSE)
 
-[build-status]: https://travis-ci.org/Kautenja/gym-super-mario-bros.svg?branch=master
-[ci-server]: https://travis-ci.org/Kautenja/gym-super-mario-bros
+[build-status]: https://api.travis-ci.org/AnthonySong98/gym-super-mario-bros.svg?branch=dev
+[ci-server]: https://travis-ci.org/AnthonySong98/gym-super-mario-bros
 [pypi-version]: https://badge.fury.io/py/gym-super-mario-bros.svg
 [pypi-license]: https://img.shields.io/pypi/l/gym-super-mario-bros.svg
 [pypi-status]: https://img.shields.io/pypi/status/gym-super-mario-bros.svg
@@ -18,6 +18,22 @@
 [python-home]: https://python.org
 
 ![Mario](https://user-images.githubusercontent.com/2184469/40949613-7542733a-6834-11e8-895b-ce1cc3af9dbb.gif)
+
+## HOW TO RUN
+```
+git clone https://github.com/AnthonySong98/gym-super-mario-bros.git
+``` 
+```
+cd gym-super-mario-bros && git checkout --track origin/dev 
+``` 
+```
+pip install -r requirements.txt
+```
+```
+python train_demo.py
+```
+
+
 
 An [OpenAI Gym](https://github.com/openai/gym) environment for
 Super Mario Bros. & Super Mario Bros. 2 (Lost Levels) on The Nintendo
@@ -192,7 +208,7 @@ keys:
 
 ## Citation
 
-Please cite `gym-super-mario-bros` if you use it in your research.
+Please cite `gym-super-mario-bros` if you use it in your research work.
 
 ```tex
 @misc{gym-super-mario-bros,

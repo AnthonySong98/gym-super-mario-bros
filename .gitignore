@@ -1,5 +1,11 @@
 # Ignores specific to different operating system files
 
+# vscode
+.vscode
+
+# results folder
+results/
+
 # MacOS
 # General
 *.pkg
