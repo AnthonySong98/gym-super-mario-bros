@@ -28,6 +28,11 @@ _CMD_LINE_ARGS = {
         'default': False,
         'help': 'whether to monitor the operation (record frames)',
     },
+    ('--frames', '-F'): {
+        'type': int,
+        'default': int(2.5e4),
+        'help': 'how to frames are played when training',
+    },
 }
 
 
@@ -53,6 +58,7 @@ def main() -> None:
             env_id=args.env,
             output_dir=args.output,
             monitor=args.monitor,
+            trained_frames=args.frames,
         )
     elif mode == 'random':
         play_random(

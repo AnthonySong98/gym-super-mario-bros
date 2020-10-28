@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 from .setup_env import setup_env
 
 
-def train(env_id: str, output_dir: str, monitor: bool=False) -> None:
+def train(env_id: str, output_dir: str, monitor: bool=False, trained_frames : int =int(2.5e4)) -> None:
     """
     Train an agent to actuate a certain environment.
 
@@ -37,7 +37,7 @@ def train(env_id: str, output_dir: str, monitor: bool=False) -> None:
     monitor_dir = '{}/monitor_train'.format(output_dir) if monitor else None
     env = setup_env(env_id, monitor_dir)
     # build the agent
-    agent = DeepQAgent(env, replay_memory_size=int(7.5e5))
+    agent = DeepQAgent(env, replay_memory_size=int(7.5e3))
     # write some info about the agent's hyperparameters to disk
     with open('{}/agent.py'.format(output_dir), 'w') as agent_file:
         agent_file.write(repr(agent))
@@ -52,7 +52,7 @@ def train(env_id: str, output_dir: str, monitor: bool=False) -> None:
     # train the agent
     try:
         callback = BaseCallback(weights_file)
-        agent.train(frames_to_play=int(2.5e6), callback=callback)
+        agent.train(frames_to_play=trained_frames, callback=callback)
     except KeyboardInterrupt:
         print('canceled training')
 

@@ -79,7 +79,7 @@ def play(results_dir: str, monitor: bool=False) -> None:
         sys.exit(0)
 
     # plot the results and save data to disk
-    plot_results(env, results_dir, 'result_play')
+    # plot_results(env, results_dir, 'result_play')
 
     env.close()
 
@@ -116,7 +116,7 @@ def play_random(env_id: str, output_dir: str, monitor: bool=False) -> None:
     agent.play()
 
     # plot the results and save data to disk
-    plot_results(env, output_dir, 'result_random')
+    # plot_results(env, output_dir, 'result_random')
 
     env.close()
 
