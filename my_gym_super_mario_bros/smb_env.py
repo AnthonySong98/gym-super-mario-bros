@@ -63,6 +63,8 @@ class SuperMarioBrosEnv(NESEnv):
         self._skip_start_screen()
         # create a backup state to restore from on subsequent calls to reset
         self._backup()
+        # setup a variable to keep track of the winning times
+        self._flag_get_times = 0 
 
     @property
     def is_single_stage_env(self):
@@ -354,6 +356,16 @@ class SuperMarioBrosEnv(NESEnv):
 
         return 0
 
+    @property
+    def _flag_get_reward(self):
+        """Return the reward earned by dying."""
+        if self._flag_get:
+            self._flag_get_times += 1
+            return 50 * (0.8**self._flag_get_times)
+
+        return 0
+    
+
     # MARK: nes-py API calls
 
     def _will_reset(self):
@@ -394,7 +406,7 @@ class SuperMarioBrosEnv(NESEnv):
 
     def _get_reward(self):
         """Return the reward after a step occurs."""
-        return (self._x_reward + self._time_penalty + self._death_penalty)*1
+        return (self._x_reward + self._time_penalty + self._death_penalty + self._flag_get_reward)*1
 
     def _get_done(self):
         """Return True if the episode is over, False otherwise."""
