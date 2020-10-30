@@ -360,6 +360,8 @@ class SuperMarioBrosEnv(NESEnv):
         """Return the reward earned by getting a flag."""
         if self._flag_get:
             return 40
+
+        return 0
     
 
     # MARK: nes-py API calls
