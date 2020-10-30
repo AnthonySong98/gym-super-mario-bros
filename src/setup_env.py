@@ -1,7 +1,7 @@
 """A method to setup an environment based on its string ID."""
 import gym
 from nes_py.wrappers import JoypadSpace#, wrap as nes_py_wrap
-from my_gym_super_mario_bros.actions import SIMPLE_MOVEMENT
+from my_gym_super_mario_bros.actions import COMPLEX_MOVEMENT
 from src.environment.atari import build_atari_environment
 
 
@@ -24,7 +24,7 @@ def setup_env(env_id: str, monitor_dir: str=None) -> gym.Env:
     elif 'SuperMarioBros' in env_id:
         from my_gym_super_mario_bros import make
         env = make(env_id)
-        env = JoypadSpace(env, SIMPLE_MOVEMENT)
+        env = JoypadSpace(env, COMPLEX_MOVEMENT)
         # env = JoypadSpace(env)
     else:
         env = build_atari_environment(env_id)

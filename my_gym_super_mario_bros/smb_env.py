@@ -350,9 +350,17 @@ class SuperMarioBrosEnv(NESEnv):
     def _death_penalty(self):
         """Return the reward earned by dying."""
         if self._is_dying or self._is_dead:
-            return -25
+            return -20
 
         return 0
+
+
+    @property
+    def _flag_get_reward(self):
+        """Return the reward earned by getting a flag."""
+        if self._flag_get:
+            return 40
+    
 
     # MARK: nes-py API calls
 
@@ -394,7 +402,7 @@ class SuperMarioBrosEnv(NESEnv):
 
     def _get_reward(self):
         """Return the reward after a step occurs."""
-        return (self._x_reward + self._time_penalty + self._death_penalty)*1
+        return (self._x_reward + self._time_penalty + self._death_penalty + self._flag_get_reward)*1
 
     def _get_done(self):
         """Return True if the episode is over, False otherwise."""
