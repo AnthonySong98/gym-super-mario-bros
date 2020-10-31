@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 from .setup_env import setup_env
 
 
-def train(env_id: str, output_dir: str, monitor: bool=False, trained_frames : int =int(2.5e4)) -> None:
+def train(env_id: str, output_dir: str, monitor: bool=False, trained_frames : int =int(1e6)) -> None:
     """
     Train an agent to actuate a certain environment.
 

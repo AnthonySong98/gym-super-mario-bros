@@ -4,11 +4,12 @@ import sys
 from datetime import datetime
 import gym
 import pandas as pd
+import numpy as np
 from matplotlib import pyplot as plt
 from .setup_env import setup_env
 
 
-def plot_results(env: gym.Env, results_dir: str, filename: str) -> None:
+def plot_results(rewards: np.array, results_dir: str, filename: str) -> None:
     """
     Plot the results of a series of episodes and save them to disk.
 
@@ -23,7 +24,8 @@ def plot_results(env: gym.Env, results_dir: str, filename: str) -> None:
     """
     # collect the game scores, actual scores from the reward cache wrapper,
     # not mutated, clipped, or whatever rewards that the agent sees
-    scores = pd.concat([pd.Series(env.unwrapped.episode_rewards)], axis=1)
+    #scores = pd.concat([pd.Series(env.unwrapped.episode_rewards)], axis=1)
+    scores = pd.DataFrame(rewards)
     scores.columns = ['Score']
     scores.index.name = 'Episode'
     print(scores.describe())
@@ -73,13 +75,14 @@ def play(results_dir: str, monitor: bool=False) -> None:
     agent.target_model.load_weights(weights_file)
 
     try:
-        agent.play()
+        # return the scores after all games
+        scores = agent.play()
     except KeyboardInterrupt:
         env.close()
         sys.exit(0)
 
     # plot the results and save data to disk
-    # plot_results(env, results_dir, 'result_play')
+    plot_results(scores, results_dir, 'result_play')
 
     env.close()
 

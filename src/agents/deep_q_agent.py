@@ -359,7 +359,7 @@ class DeepQAgent(Agent):
 
         progress.close()
 
-    def play(self, games: int=100, exploration_rate: float=0.05) -> np.ndarray:
+    def play(self, games: int=10, exploration_rate: float=0.05) -> np.ndarray:
         """
         Run the agent without training for the given number of games.
 
